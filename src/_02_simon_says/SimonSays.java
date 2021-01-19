@@ -31,6 +31,9 @@ public class SimonSays extends KeyAdapter {
 	// Complete steps 1 - 7 before you test
 	// 1. Declare a JFrame variable
 	JFrame frame;
+	
+	int score = 0;
+
 
 	public void run() {
 		// 2. Add the four images that match keyboard keys like this:
@@ -49,33 +52,59 @@ public class SimonSays extends KeyAdapter {
 
 	}
 
-	public void keyPressed(KeyEvent e) {
+	public void keyPressed(KeyEvent event) {
 		// 15. Make a points variable to track the score.
+		
+		int key = event.getKeyCode();
 
 		// 16. If the keyCode matches the imageIndex and "Simon says"
+		if(imageIndex == key) {
 
 		// 17. Increase the value of score
+			// Key for down is 40
+			System.out.println(key);
+			System.out.println("Correct");
+		
+			score += 1;
+		}
 
 		// 18. Use the speak method to tell the user they were correct
+		//if(imageIndex)
 
 		// 19. If the keyCode doesn't match the imageIndex and "Simon didn't
 		// say..."
-
+		if(imageIndex != key) {
+			System.out.println("Wrong");
+			score -= 1;
+		}
 		// 20. Increase the value of score
 
 		// 21. Use the speak method to tell the user they were correct
 
 		// 22. Increment tries by 1
+		int tries = 10;
 
 		// 25. If tries is greater than 9 (or however many you want)...
+		if(tries <= 10) {
+			tries += 1;
+		}
 
 		// 26. Tell the user their score
-
 		// 27. Exit the program
 
+		else {
+			System.out.println(score);
+			System.exit(0);
+
+			
+		}
+
+
 		// 23. Dispose of the frame
+		frame.dispose();
 
 		// 24. Call the showImage method to show a new image
+		showImage();
 	}
 
 	private void showImage() {
@@ -110,10 +139,49 @@ public class SimonSays extends KeyAdapter {
 		int random = r.nextInt(2);
 		
 		if(random == 0) {
-			JOptionPane.showInputDialog("Simon says type this key");
+			String answer = JOptionPane.showInputDialog("Simon says type this key");
+			simonSays = true;
+			
+			if(imageIndex == 40 && answer.equalsIgnoreCase("DOWN")) {
+				score += 1;
+				System.out.println("Correct");
+				
+			}
+
+			
+			if(imageIndex == 39 && answer.equalsIgnoreCase("RIGHT")) {
+				score += 1;
+				System.out.println("Correct");
+
+				
+			}
+
+			
+			if(imageIndex == 37 && answer.equalsIgnoreCase("LEFT")) {
+				score += 1;
+				System.out.println("Correct");
+
+				
+			}
+
+			
+			if(imageIndex == 38 && answer.equalsIgnoreCase("UP")) {
+				score += 1;
+				System.out.println("Correct");
+
+			}
+			else {
+				score -= 1;
+				System.out.println("Wrong");
+
+				
+			}
+			
+			
 		}
 		if(random == 1) {
-			JOptionPane.showMessageDialog(null, "");
+			JOptionPane.showMessageDialog(null, "Simon says press this key");
+			simonSays = false;
 		}
 
 		// 14. Above, set the value of simonSays to true/false appropriately
