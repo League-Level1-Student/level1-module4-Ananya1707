@@ -33,6 +33,7 @@ public class SimonSays extends KeyAdapter {
 	JFrame frame;
 	
 	int score = 0;
+	
 
 
 	public void run() {
@@ -45,10 +46,13 @@ public class SimonSays extends KeyAdapter {
 		// 3. Use a JOptionPane to tell the user the rules: "Press the matching
 		// key when
 		// 'Simon says' otherwise press a different key"
-		JOptionPane.showMessageDialog(null, "Press the matching key when 'Simon says' otherwise press a different key");
+		
+			JOptionPane.showMessageDialog(null, "Press the matching key when 'Simon says' otherwise press a different key");
 
-		// 4. Call the showImage method to show an image
-		showImage();
+			// 4. Call the showImage method to show an image
+			showImage();			
+		
+
 
 	}
 
@@ -56,7 +60,7 @@ public class SimonSays extends KeyAdapter {
 		// 15. Make a points variable to track the score.
 		
 		int key = event.getKeyCode();
-
+		System.out.println(key);
 		// 16. If the keyCode matches the imageIndex and "Simon says"
 		if(imageIndex == key) {
 
@@ -82,29 +86,28 @@ public class SimonSays extends KeyAdapter {
 		// 21. Use the speak method to tell the user they were correct
 
 		// 22. Increment tries by 1
-		int tries = 10;
+
 
 		// 25. If tries is greater than 9 (or however many you want)...
-		if(tries <= 10) {
+		if(tries < 10) {
 			tries += 1;
-		}
-
-		// 26. Tell the user their score
-		// 27. Exit the program
-
-		else {
+		}else {
 			System.out.println(score);
 			System.exit(0);
 
 			
 		}
 
+		// 26. Tell the user their score
+		// 27. Exit the program
+
+
 
 		// 23. Dispose of the frame
 		frame.dispose();
 
 		// 24. Call the showImage method to show a new image
-		showImage();
+		run();
 	}
 
 	private void showImage() {
@@ -149,7 +152,7 @@ public class SimonSays extends KeyAdapter {
 			}
 
 			
-			if(imageIndex == 39 && answer.equalsIgnoreCase("RIGHT")) {
+			else if(imageIndex == 39 && answer.equalsIgnoreCase("RIGHT")) {
 				score += 1;
 				System.out.println("Correct");
 
@@ -157,7 +160,7 @@ public class SimonSays extends KeyAdapter {
 			}
 
 			
-			if(imageIndex == 37 && answer.equalsIgnoreCase("LEFT")) {
+			else if(imageIndex == 37 && answer.equalsIgnoreCase("LEFT")) {
 				score += 1;
 				System.out.println("Correct");
 
@@ -165,7 +168,7 @@ public class SimonSays extends KeyAdapter {
 			}
 
 			
-			if(imageIndex == 38 && answer.equalsIgnoreCase("UP")) {
+			else if(imageIndex == 38 && answer.equalsIgnoreCase("UP")) {
 				score += 1;
 				System.out.println("Correct");
 
