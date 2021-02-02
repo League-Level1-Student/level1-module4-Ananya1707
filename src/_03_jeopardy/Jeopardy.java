@@ -34,7 +34,7 @@ import javax.swing.JPanel;
 public class Jeopardy implements ActionListener {
 	private JButton firstButton;
 	private JButton secondButton;
-	private JButton thirdButton, fourthButton;
+	private JButton thirdButton, fourthButton, fifthButton;
 	private JPanel quizPanel;
 	private int score = 0;
 	private JLabel scoreBox = new JLabel("0");
@@ -56,7 +56,7 @@ public class Jeopardy implements ActionListener {
 		frame.setTitle("Jeopardy");
 
 		// 3. Create a JPanel variable to hold the header using the createHeader method
-		JPanel header = createHeader("Jeopardy");
+		JPanel header = createHeader("Solar System");
 
 		// 4. Add the header component to the quizPanel
 		quizPanel.add(header);
@@ -87,6 +87,18 @@ public class Jeopardy implements ActionListener {
 		// 12. Write the code to complete the actionPerformed() method below
 
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
+		thirdButton = createButton("$600");
+		quizPanel.add(thirdButton);
+		thirdButton.addActionListener(this);
+		
+		fourthButton = createButton("$800");
+		quizPanel.add(fourthButton);
+		fourthButton.addActionListener(this);
+		
+		fifthButton = createButton("$1000");
+		quizPanel.add(fifthButton);
+		fifthButton.addActionListener(this);
+		
 		
 		 /*
 		 * [optional] Use the showImage or playSound methods when the user answers a
@@ -126,7 +138,7 @@ public class Jeopardy implements ActionListener {
 		// If the buttonPressed was the firstButton
 		if(buttonPressed == firstButton) {
 			// Call the askQuestion() method
-			askQuestion("Name of a shape with 4 sides?", "Square", 200 );
+			askQuestion("Is the sun a planet, a star, or a comet?", "star", 200 );
 			
 		}
  
@@ -136,12 +148,33 @@ public class Jeopardy implements ActionListener {
 		if(buttonPressed == secondButton) {
 			
 			// Call the askQuestion() method with a harder question
-			askQuestion("Name of a shape with 7 sides", "Heptagon", 400 );
+			askQuestion("What is the hottest planet in our solar system?", "Venus", 400 );
 
 			
 		}
 
+		if(buttonPressed == thirdButton) {
+			
+			askQuestion("Which planet rotates on its side?", "Uranus", 600 );
+
+			
+		}
+		
+		if(buttonPressed == fourthButton) {
+			
+			askQuestion("What percent of earth is covered in water?", "71%", 800 );
+
+			
+		}
+		
+		if(buttonPressed == fifthButton) {
+			
+			askQuestion("What mineral makes Mars red?", "iron", 1000 );
+
+			
+		}
 		// Clear the text on the button that was pressed (set the button text to nothing)
+		buttonPressed.setText("");
 
 	}
 
