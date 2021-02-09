@@ -25,7 +25,7 @@ public class TypingTutor {
 		
 		JLabel label = new JLabel();
 		label.setText(currentLetter);
-		
+		//
 	}
 
 }
