@@ -50,8 +50,6 @@ public class BookOfIllusions extends MouseAdapter {
 		// 12. remove everything from the frame that was added earlier
 		frame.removeAll();
 		// 13. load a new image like before (this is more than one line of code)
-		frame.setVisible(true);
-		frame.setSize(500,500);
 		JLabel label2;
 		label2 = loadImageFromComputer(picture2);
 		frame.add(label2);
