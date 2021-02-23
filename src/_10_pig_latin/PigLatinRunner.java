@@ -2,11 +2,11 @@ package _10_pig_latin;
 
 public class PigLatinRunner {
 	public static void main(String[] args) {
-		new PigLatin().run();
 		
-		//PigLatinTranslator n = new PigLatinTranslator();
+		PigLatin p = new PigLatin();		
+		p.run();
+				
 		
-		//n.translate(null)
 	}
 
 }

@@ -14,8 +14,14 @@ public class PigLatin implements ActionListener {
 	JTextField text1;
 	JTextField text2;
 	JButton button;
+	String word;
+	PigLatinTranslator n = new PigLatinTranslator();
+	String wordLatin = "";
+
+	
 	
 	public void run() {
+
 		frame = new JFrame();
 		frame.setVisible(true);
 		frame.setTitle("Ananya'a Pig Latin Translator");
@@ -35,14 +41,21 @@ public class PigLatin implements ActionListener {
 		panel.add(text2);
 		
 		frame.pack();
-		
+				
 		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		String word = text1.getText();
+		 word = text1.getText();
+		 
+		 wordLatin = n.translate(word);
+		 
+		 text2.setText(wordLatin);
+		 
+		 
+		
 		
 
 		
