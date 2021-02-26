@@ -13,6 +13,7 @@ public class WhackAMole implements ActionListener {
 	JPanel panel;
 	JButton button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20, button21, button22, button23, button24;
 	JButton button;
+	int randomNum;
 	
 	public void run(){
 		frame = new JFrame();
@@ -29,7 +30,8 @@ public class WhackAMole implements ActionListener {
 		button1.addActionListener(this); button2.addActionListener(this); button3.addActionListener(this); button4.addActionListener(this); button5.addActionListener(this); button6.addActionListener(this); button7.addActionListener(this); button8.addActionListener(this); button9.addActionListener(this); button10.addActionListener(this); button11.addActionListener(this); button12.addActionListener(this); button13.addActionListener(this); button14.addActionListener(this); button15.addActionListener(this); button16.addActionListener(this); button17.addActionListener(this); button18.addActionListener(this); button19.addActionListener(this); button20.addActionListener(this); button21.addActionListener(this); button22.addActionListener(this); button23.addActionListener(this); button24.addActionListener(this);
 		
 		Random random = new Random();
-		random.nextInt(25);
+		randomNum = random.nextInt(25);
+		drawButton(randomNum);
 		
 		
 		}
@@ -40,7 +42,11 @@ public class WhackAMole implements ActionListener {
 		
 	}
 	
-	public void drawButton(int randomNum) {
+	public void drawButton(int num) {
+		
+		
+		
+		
 		
 	}
 
