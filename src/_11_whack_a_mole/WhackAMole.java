@@ -45,7 +45,7 @@ public class WhackAMole implements ActionListener {
 		}
 		
 		frame.dispose();
-		int randomNum = random.nextInt(25) + 1;
+		int randomNum = random.nextInt(25);
 		drawButton(randomNum);
 		
 		if(score == 10) {
