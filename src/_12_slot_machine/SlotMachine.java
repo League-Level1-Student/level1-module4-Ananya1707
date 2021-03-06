@@ -124,7 +124,6 @@ public class SlotMachine implements ActionListener {
 		
 		frame.dispose();
 		spin();
-		System.out.println("hi");
 		
 	}
 	
