@@ -40,8 +40,8 @@ public class SlotMachine implements ActionListener {
 		
 		frame.setSize(200,70);
 	}
-
-	public void spin(){
+		
+	public void spin() {
 		Random random = new Random();
 		randomNum1 = random.nextInt(3);
 		randomNum2 = random.nextInt(3);
@@ -58,70 +58,75 @@ public class SlotMachine implements ActionListener {
 		panel = new JPanel();
 		frame.add(panel);
 		
-		//createLabelImage(cherry.png);
-		//createLabelImage(orange.png);
-		//createLabelImage(lime.png);
-		
 		slot1 = new JLabel();
-		panel.add(slot1);
 		slot2 = new JLabel();
-		panel.add(slot2);
 		slot3 = new JLabel();
+		
+		try{
+			if(randomNum1 == 0) {
+				slot1 = createLabelImage("cherry.png");
+			}
+
+			if(randomNum1 == 1) {
+				slot1 = createLabelImage("orange3.png");
+			}
+		
+			if(randomNum1 == 2) {
+				slot1 = createLabelImage("lime.png");
+			}
+			
+			if(randomNum2 == 0) {
+				slot2 = createLabelImage("cherry.png");
+			}
+
+			if(randomNum2 == 1) {
+				slot2 = createLabelImage("orange3.png");
+			}
+		
+			if(randomNum2 == 2) {
+				slot2 = createLabelImage("lime.png");
+			}
+			
+			if(randomNum3 == 0) {
+				slot3 = createLabelImage("cherry.png");
+			}
+
+			if(randomNum3 == 1) {
+				slot3 = createLabelImage("orange3.png");
+			}
+		
+			if(randomNum3 == 2) {
+				slot3 = createLabelImage("lime.png");
+			}
+		
+		}
+		catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
+		
+		panel.add(slot1);
+		panel.add(slot2);
 		panel.add(slot3);
-		
-		if(randomNum1 == 0) {
-			slot1.setText("cherry");
-		}
-		
-		if(randomNum1 == 1) {
-			slot1.setText("orange");
-		}
-		
-		if(randomNum1 == 2) {
-			slot1.setText("lime");
-		}
-		
-		if(randomNum2 == 0) {
-			slot2.setText("cherry");
-		}
-		
-		if(randomNum2 == 1) {
-			slot2.setText("orange");
-		}
-		
-		if(randomNum2 == 2) {
-			slot2.setText("lime");
-		}
-		
-		if(randomNum3 == 0) {
-			slot3.setText("cherry");
-		}
-		
-		if(randomNum3 == 1) {
-			slot3.setText("orange");
-		}
-		
-		if(randomNum3 == 2) {
-			slot3.setText("lime");
-		}
-		
+
+
+
 		button = new JButton();
 		panel.add(button);
 		button.setText("Spin");
-		button.addActionListener(this);	
+		button.addActionListener(this);
 		
 		frame.pack();
 		
-		if(randomNum1 == randomNum2 &&  randomNum1 == randomNum3) {
+		if(randomNum1 == randomNum2 && randomNum1 == randomNum3) {
 			JOptionPane.showMessageDialog(null, "YOU WIN!");
 		}
 		
 	}
-	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
 		frame.dispose();
 		spin();
 		
